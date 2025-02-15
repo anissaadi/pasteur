@@ -1,0 +1,29 @@
+<!-- templates/success.html -->
+{% extends 'base.html' %}
+{% block title %}Succès de la Soumission{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body text-center">
+                <h1 class="card-title text-success"><i class="fas fa-check-circle"></i> Félicitations !</h1>
+                <p class="card-text">Votre certificat a été soumis avec succès et est en cours de traitement.</p>
+
+                {% if certificate_name %}
+                    <p class="card-text">Certificat soumis : <strong>{{ certificate_name }}</strong></p>
+                {% endif %}
+
+                <p class="card-text">Nous vous remercions pour votre contribution.</p>
+                
+            
+                <div class="mt-4">
+                    <a href="{% url 'soumettre_certificat' %}" class="btn btn-primary mr-2">Soumettre un autre certificat</a>
+                   
+                    <!-- Ajoutez d'autres actions pertinentes ici -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Pour l'icône -->
+{% endblock %}

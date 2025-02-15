@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <title>Certificat N° {{ certificat.pk }}</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            size: A4;
+            font-family: 'DejaVuSans', sans-serif;
+            font-size: 16px;
+            color: black;
+            direction: rtl;
+            line-height: 30px;
+        }
+        .main{
+            min-height: 297mm;
+        }
+        .certificat-container {
+            width: 100%;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+       
+        
+    </style>
+</head>
+<body>
+  <div class="main">
+    <div class="certificat-container">
+        <h1>الجمهورية الجزائرية الديمقراطية الشعبية</h1>
+        <h1>وزارة الصناعة الصيدلية</h1>
+        <h1>الوكالة الوطنية للمواد الغدائية</h1>
+        <h1 style="margin-bottom: 30px;">
+          
+            رخصة تسويق مؤقتة رقم 
+            <span>......</span>
+            و ص ص / و و م ص المؤرخ في 
+        </h1>
+
+        <p>
+            ان المدير العام للوكالة الوطنية للمواد الصيدلانية،
+        </p>
+        <p>
+            - بمقتضى القانون رقم 18-11 المؤرخ في 18 شوال عام 1439 الموافق 2 يوليو سنة 2018 و المتعلق بالصحة، المعدل و المتمم
+        </p>
+        <p>
+       
+            وبمقتضى المرسوم التنفيذي رقم 19-190 المؤرخ في 30 شوال عام 1440 الموافق 3 يوليو سنة 2019 الذي يحدد مهام الوكالة الوطنية للمواد الصيدلانية وتنظيمها وسيرها ، المعدل والمتمم،
+
+  
+        </p>
+
+        <p>
+            -
+            وبمقتضى المرسوم التنفيذي رقم 20-324 المؤرخ في 6 ربيع الثاني عام 1442 الموافق 22 نوفمبر سنة 2020 المتعلق بكيفيات المصادقة على المستلزمات الطبية،
+        </p>
+        <p>
+            -
+            
+وبمقتضى المرسوم التنفيذي رقم 21-82 المؤرخ في 11 رجب عام 1442 الموافق 23 فبراير سنة 2021، المتعلق بالمؤسسات الصيدلانية وشروط اعتمادها،
+        </p>
+        <p>
+            - 
+            وبمقتضى القرار رقم 122 المؤرخ في 2022/06/06 المتضمن تكليف السيد دليح الشريف بصفته أمين عام للوكالة الوطنية للمواد الصيدلانية بتسيير المديرية العامة للوكالة
+        </p>
+        <p>
+            -و
+            بمقتضى القرار المؤرخ في 2 رجب 1442 الموافق لـ 14 فيفري 2021 المحدد لدفتر الشروط التقنية لاستيراد المواد الصيدلانية والمستلزمات الطبية المستعملة في الطب البشري، لا سيما المادة 28 منه،
+        </p>
+
+        <p>
+            - 
+            وبمقتضى القرار رقم 01 المؤرخ في 06 فبراير 2025 المتضمن تحديد كيفيات تسويق المستلزمات الطبية غير المصادق عليها في الجزائر على سبيل الترخيص والاستثناء،
+        </p>
+
+        <p>
+            -و بناءا على طلب رخصة التسويق المؤقتة المقدمة من طرف المؤسسة الصيدلانية 
+            {{certificat.nom_produit}}
+        </p>
+
+
+        <h3 style="text-align: center; margin-top: 30px;">
+            يقرر ما يأتي:
+        </h3>
+
+        <p>
+            <span style="font-weight: bold;">
+                المادة 1:
+            </span>
+            تمنح رخصة التسويق المؤقتة للمستلزم الطبي التالي:
+        </p>
+        <div style="direction: ltr;">
+            <div class="info-section">
+            
+                <span class="info-value">{{ certificat.denomination_commerciale }}</span>
+            </div>
+            <div class="info-section">
+       
+                <span class="info-value">{{ certificat.designation }}</span>
+            </div>
+            <div class="info-section">
+          
+                <span class="info-value">{{ certificat.classification }}</span>
+            </div>
+            <div class="info-section">
+                <span class="info-label">Caractéristiques:</span>
+                <span class="info-value">{{ certificat.caracteristiques }}</span>
+            </div>
+            <div class="info-section">
+                <span class="info-label">Conditions de conservation:</span>
+                <span class="info-value">{{ certificat.conditions_conservation }}</span>
+            </div>
+            <div class="info-section">
+                <span class="info-label">Durée de stabilité:</span>
+                <span class="info-value">{{ certificat.duree_stabilite }}</span>
+            </div>
+     
+        </div>
+  </div>
+
+        <div>
+            <p>
+                اسم و عنوان حائز رخصةالتسويق المؤقتة:
+                
+            </p>
+
+            <p>
+                {{certificat.nom}}
+                {{certificat.adress}}
+            </p>
+
+            <p>
+                اسم و عنوان مستغل رخصة التسويق المؤقتة :
+                
+            </p>
+
+            <p>
+                {{certificat.nom_produit}}
+                {{certificat.adress_produit}}
+            </p>
+            <p>
+                اسم المنتج وعنوان موقع إنتاج المستلزم الطبي :
+            </p>
+            <p>
+                {{certificat.nom_fabric}}
+                {{certificat.adress_fabric}}
+            </p>
+            <p>
+                هيئة أو هيئات التصديق أو هيئات معادلة:
+            </p>
+            <p>
+                {{certificat.organisme}}
+            </p>
+        </div>
+
+        <p>
+           <span style="font-weight: bold;">
+                المادة 2:
+            </span>
+            يجب احترام طرق الانتاج وتقنيات المراقبة لهذا المستلزم الطبي المنصوص عليها في ملف المصادقة طبقا للتشريع و التنظيم المعمول بهما في هذا المجال.
+        </p>
+
+        <p>
+            <span style="font-weight: bold;">
+                المادة 3:
+            </span>
+            إن مدة صلاحية هذه الرخصة محددة لسنة واحدة (1) ابتداءا من تاريخ امضائها.
+        </p>
+
+        <p>
+            <span style="font-weight: bold;">
+                    المادة 4:
+            </span>
+            يلزم على المؤسسة الصيدلانية الحائزة و / أو المستغلة تكملة ملف المصادقة لهذا المستلزم الطبي خلال فترة لا تتجاوز شهرا واحدا (1) من تاريخ امضاء هذه الرخصة.
+        </p>
+
+
+        <p style="text-align: center;font-weight: bold; margin-top: 30px;">
+            حرر بالجزائر في
+        </p>
+    </div>
+</body>
+</html>

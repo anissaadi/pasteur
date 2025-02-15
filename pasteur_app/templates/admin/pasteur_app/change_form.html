@@ -1,0 +1,10 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block after_field_sets %}
+    {{ block.super }}
+    <div class="submit-row">
+        <input type="button" value="{% translate 'Imprimer le fichier PDF' %}"
+               onclick="window.open('{% url 'generer_pdf_certificat_html' original.pk %}', '_blank');">
+    </div>
+{% endblock %}
